@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mofei.mapper.PropertyMapper">
+
+
+    <insert id="add" >
+        INSERT INTO  property_ (cid,name) VALUES  (#{property.cid},#{property.name})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM property_ WHERE id = #{id}
+    </delete>
+
+    <update id="update">
+        UPDATE property_ SET name = #{property.name} where id = #{property.id}
+    </update>
+
+    <select id="get" resultType="com.mofei.pojo.Property">
+        SELECT * FROM property_ WHERE  id = #{id}
+    </select>
+
+    <select id="list" resultType="com.mofei.pojo.Property">
+        SELECT * FROM  property_ WHERE cid = ${id}
+    </select>
+
+
+</mapper>
