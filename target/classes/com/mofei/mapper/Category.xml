@@ -54,6 +54,10 @@
         DELETE FROM category_ WHERE  id = #{id}
     </delete>
 
+    <select id="listbyentry" resultType="com.mofei.pojo.Category">
+        SELECT id, name FROM category_;
+    </select>
+
 
 </mapper>
 

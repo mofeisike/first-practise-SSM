@@ -26,4 +26,7 @@ public interface CategoryMapper {
 
     //删除评论的新闻
     int deleteComment(@Param("id") Integer id);
+
+    //查询产品分类
+    List<Category> listbyentry();
 }

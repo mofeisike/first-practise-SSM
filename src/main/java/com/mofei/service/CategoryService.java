@@ -26,4 +26,7 @@ public interface CategoryService {
 
     //删除所有新闻和评论
     boolean deteleComments(Integer id);
+
+    //查询分类产品
+    List<Category> listbyenrty();
 }

@@ -24,6 +24,7 @@
     <tr>
         <th colspan="9">
             <h2>表单</h2>
+            <button type="button"><a href="/entry/listEntry">产品页面</a></button>
         </th>
     </tr>
     <tr>

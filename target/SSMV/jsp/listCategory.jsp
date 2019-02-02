@@ -24,6 +24,7 @@
     <tr>
         <th colspan="9">
             <h2>表单</h2>
+            <button type="button"><a href="/entry/listEntry">产品页面</a></button>
         </th>
     </tr>
     <tr>
@@ -37,6 +38,16 @@
     </tr>
     </thead>
     <tbody>
+    <tr>
+        <td colspan="9">
+            <c:if test="${deletesuc eq true}">
+                删除成功,请返回
+            </c:if>
+            <c:if test="${deletesuc eq false}">
+                删除失败,请返回
+            </c:if>
+        </td>
+    </tr>
     <c:forEach items="${cs}" var="obj">
         <tr>
             <td>${obj.id}</td>
@@ -55,16 +66,6 @@
             </td>
         </tr>
     </c:forEach>
-    <tr>
-        <td colspan="9">
-            <c:if test="${deletesuc eq true}">
-                删除成功
-            </c:if>
-            <c:if test="${deletesuc eq false}">
-                删除失败
-            </c:if>
-        </td>
-    </tr>
     </tbody>
 </table>
 

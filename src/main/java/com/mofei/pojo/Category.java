@@ -1,6 +1,7 @@
 package com.mofei.pojo;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 
 public class Category implements Serializable {
@@ -11,6 +12,16 @@ public class Category implements Serializable {
     private String name;
 
     private Date createDate;
+
+    private List<Entry> entries;
+
+    public List<Entry> getEntries() {
+        return entries;
+    }
+
+    public void setEntries(List<Entry> entries) {
+        this.entries = entries;
+    }
 
     public Category() {
     }

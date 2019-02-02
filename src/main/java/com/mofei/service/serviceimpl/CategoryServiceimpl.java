@@ -72,4 +72,9 @@ public class CategoryServiceimpl implements CategoryService {
 
         return row == 1 ? true: false;
     }
+
+    @Override
+    public List<Category> listbyenrty() {
+        return categoryMapper.listbyentry();
+    }
 }
