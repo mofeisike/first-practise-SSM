@@ -4,6 +4,16 @@ import java.io.Serializable;
 
 public class Entry implements Serializable {
 
+    @Override
+    public String toString() {
+        return "Entry{" +
+                "id=" + id +
+                ", cid=" + cid +
+                ", name='" + name + '\'' +
+                ", introduce='" + introduce + '\'' +
+                ", category=" + category +
+                '}';
+    }
 
     private int id;
 
@@ -11,7 +21,18 @@ public class Entry implements Serializable {
 
     private String name;
 
+    private String introduce;
+
     private Category category;
+
+    public String getIntroduce() {
+        return introduce;
+    }
+
+    public void setIntroduce(String introduce) {
+        this.introduce = introduce;
+    }
+
 
     public int getId() {
         return id;

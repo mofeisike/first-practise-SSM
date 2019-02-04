@@ -13,4 +13,6 @@ public interface EntryService {
     List<Entry> querylist(Integer cid);
 
 
+    int add(Entry entry);
+
 }

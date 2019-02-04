@@ -36,7 +36,6 @@ public class CategoryController {
         return modelAndView;
     }
 
-
     @RequestMapping("/addCategory")
     public ModelAndView addCategory(Category category){
         category.setCreateDate(new Date());
@@ -79,7 +78,7 @@ public class CategoryController {
     }
 
     @RequestMapping("/getCategory/name")
-    public ModelAndView getCategory(@RequestParam("name") String name,Category category){
+    public ModelAndView getCategory(@RequestParam("name") String name){
         List<Category> list = categoryService.getName(name);
 //        category.setName(name);
 //        List<Category> list = categoryService.getNameByObj(category);
@@ -95,7 +94,6 @@ public class CategoryController {
             mav.setViewName("/listCategory");
             System.out.println("no");
         }
-
         System.out.println(name);
         System.out.println(list.size());
         return mav;

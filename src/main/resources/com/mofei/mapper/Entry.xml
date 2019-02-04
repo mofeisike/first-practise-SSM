@@ -13,4 +13,32 @@
             </if>
         </where>
     </select>
+
+    <insert id="add">
+        insert into entry
+
+        <trim suffix=")" prefix="(" prefixOverrides="," suffixOverrides=",">
+            <if test="entry.name != null and entry.name != ''">
+                ,name
+            </if>
+            <if test="entry.cid!= null and entry.cid!= '' ">
+                ,cid
+            </if>
+            <if test="entry.introduce!= null and entry.introduce!= ''">
+                ,introduce
+            </if>
+        </trim>
+
+        <trim suffix=")" prefix="values(" prefixOverrides="," suffixOverrides=",">
+            <if test="entry.name != null and entry.name != ''">
+                ,#{entry.name}
+            </if>
+            <if test="entry.cid!= null and entry.cid!= ''">
+                ,#{entry.cid}
+            </if>
+            <if test="entry.introduce!= null and entry.introduce!= ''">
+                ,#{entry.introduce}
+            </if>
+        </trim>
+    </insert>
 </mapper>

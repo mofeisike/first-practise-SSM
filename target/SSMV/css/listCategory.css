@@ -1,0 +1,8 @@
+.body-head-form *{
+    float: left;
+    display: block;
+    width: auto;
+}
+
+.body-head-form{
+}

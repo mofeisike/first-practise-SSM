@@ -22,5 +22,10 @@ public class EntryServiceimpl implements EntryService {
         return entryMapper.querylist(cid);
     }
 
+    @Override
+    public int add(Entry entry) {
+        return entryMapper.add(entry);
+    }
+
 
 }

@@ -11,5 +11,6 @@ public interface EntryMapper {
 
 
     public List<Entry> querylist(@Param("cid") Integer cid);
-
+    
+    int add(@Param("entry") Entry entry);
 }
