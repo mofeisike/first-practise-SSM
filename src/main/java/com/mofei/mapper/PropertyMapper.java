@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PropertyMapper {
 
-    public int add(@Param("property") Property property);
+    public int add(Property property);
 
     public void delete(@Param("id")int id);
 

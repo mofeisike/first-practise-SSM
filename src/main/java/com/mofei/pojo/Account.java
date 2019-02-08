@@ -18,6 +18,9 @@ public class Account implements Serializable {
 
     private List<TransactionRecord> transactionRecords;
 
+    public Account() {
+    }
+
     public List<TransactionRecord> getTransactionRecords() {
         return transactionRecords;
     }
@@ -34,6 +37,7 @@ public class Account implements Serializable {
         this.id = id;
     }
 
+
     public String getCardNo() {
         return cardNo;
     }
@@ -41,6 +45,7 @@ public class Account implements Serializable {
     public void setCardNo(String cardNo) {
         this.cardNo = cardNo;
     }
+
 
     public String getPassword() {
         return password;
@@ -64,5 +69,17 @@ public class Account implements Serializable {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", cardNo='" + cardNo + '\'' +
+                ", password='" + password + '\'' +
+                ", balance=" + balance +
+                ", status=" + status +
+                ", transactionRecords=" + transactionRecords +
+                '}';
     }
 }

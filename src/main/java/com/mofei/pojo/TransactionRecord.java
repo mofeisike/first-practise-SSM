@@ -86,4 +86,18 @@ public class TransactionRecord implements Serializable {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    @Override
+    public String toString() {
+        return "TransactionRecord{" +
+                "id=" + id +
+                ", cardNo='" + cardNo + '\'' +
+                ", transactionDate=" + transactionDate +
+                ", transactionAmount=" + transactionAmount +
+                ", balance=" + balance +
+                ", transactionType='" + transactionType + '\'' +
+                ", remark='" + remark + '\'' +
+                ", account=" + account +
+                '}';
+    }
 }

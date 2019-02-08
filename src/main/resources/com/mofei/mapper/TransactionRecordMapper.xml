@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mofei.mapper.TransactionRecordMapper">
+
+    <insert id="insert" >
+        insert into transactionrecord (cardNo, transactionDate, transactionAmount, balance, transactionType)
+        <trim prefix="values(" suffix=")" prefixOverrides=",">
+            <if test="tr.cardNo  != null">
+                ,#{tr.cardNo}
+            </if>
+            <if test=" tr.transactionDate != null ">
+                ,#{tr.transactionDate}
+            </if>
+            <if test=" tr.transactionAmount  != null  ">
+                ,#{tr.transactionAmount}
+            </if>
+            <if test=" tr.balance != null ">
+                ,#{tr.balance }
+            </if>
+            <if test=" tr.transactionType != null and  tr.transactionType != '' ">
+                ,#{tr.transactionType}
+            </if>
+        </trim>
+    </insert>
+
+    <select id="queryByCardNo" resultType="com.mofei.pojo.TransactionRecord">
+        select id,cardNo, transactionDate, transactionAmount, balance, transactionType
+        from transactionrecord
+        <where>
+            <if test="recordDTO.cardNo != null">
+                and cardNo = #{recordDTO.cardNo}
+            </if>
+            <if test="recordDTO.start != null and recordDTO.end == null">
+                and transactionDate >= #{recordDTO.start}
+            </if>
+            <if test="recordDTO.start == null and recordDTO.end != null">
+                and transactionDate $lt;= #{recordDTO.end}
+            </if>
+            <if test="recordDTO.start != null and recordDTO.end != null">
+                and transactionDate between #{recordDTO.start} and #{recordDTO.end}
+            </if>
+        </where>
+        ORDER BY transactionDate DESC
+    </select>
+</mapper>

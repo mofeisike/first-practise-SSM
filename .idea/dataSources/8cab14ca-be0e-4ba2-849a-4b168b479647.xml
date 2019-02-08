@@ -936,109 +936,211 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="238" parent="11" name="category_">
+    <table id="238" parent="11" name="account">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="239" parent="11" name="entry">
+    <table id="239" parent="11" name="category_">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="240" parent="11" name="newscomments_">
+    <table id="240" parent="11" name="entry">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="241" parent="11" name="property_">
+    <table id="241" parent="11" name="newscomments_">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="242" parent="238" name="id">
+    <table id="242" parent="11" name="property_">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="243" parent="11" name="transactionrecord">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="244" parent="238" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="245" parent="238" name="cardNo">
+      <Position>2</Position>
+      <Comment>卡号</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="246" parent="238" name="password">
+      <Position>3</Position>
+      <Comment>密码</Comment>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="247" parent="238" name="balance">
+      <Position>4</Position>
+      <Comment>账号余额</Comment>
+      <DataType>decimal(11,2)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="248" parent="238" name="status">
+      <Position>5</Position>
+      <Comment>账号状态</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="249" parent="238" name="cardNo">
+      <ColNames>cardNo</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="250" parent="238" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="251" parent="238" name="cardNo">
+      <ColNames>cardNo</ColNames>
+      <UnderlyingIndexName>cardNo</UnderlyingIndexName>
+    </key>
+    <column id="252" parent="239" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="238" name="name">
+    <column id="253" parent="239" name="name">
       <Position>2</Position>
       <DataType>varchar(30)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="238" name="createDate">
+    <column id="254" parent="239" name="createDate">
       <Position>3</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
     </column>
-    <key id="245" parent="238" name="PRIMARY">
+    <key id="255" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="246" parent="239" name="id">
+    <column id="256" parent="240" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="239" name="cid">
+    <column id="257" parent="240" name="cid">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="239" name="name">
+    <column id="258" parent="240" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="239" name="introduce">
+    <column id="259" parent="240" name="introduce">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="250" parent="239" name="PRIMARY">
+    <key id="260" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="251" parent="240" name="id">
+    <column id="261" parent="241" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="240" name="newid">
+    <column id="262" parent="241" name="newid">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="240" name="comments">
+    <column id="263" parent="241" name="comments">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="254" parent="240" name="PRIMARY">
+    <key id="264" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="255" parent="241" name="id">
+    <column id="265" parent="242" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="241" name="cid">
+    <column id="266" parent="242" name="cid">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="241" name="name">
+    <column id="267" parent="242" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="258" parent="241" name="PRIMARY">
+    <key id="268" parent="242" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="269" parent="243" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="270" parent="243" name="cardNo">
+      <Position>2</Position>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="271" parent="243" name="transactionDate">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
+    </column>
+    <column id="272" parent="243" name="transactionAmount">
+      <Position>4</Position>
+      <DataType>decimal(11,2)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="273" parent="243" name="balance">
+      <Position>5</Position>
+      <DataType>decimal(11,2)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="274" parent="243" name="transactionType">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="275" parent="243" name="remark">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="276" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

@@ -16,7 +16,6 @@
 
     <insert id="add">
         insert into entry
-
         <trim suffix=")" prefix="(" prefixOverrides="," suffixOverrides=",">
             <if test="entry.name != null and entry.name != ''">
                 ,name
